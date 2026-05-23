@@ -154,6 +154,7 @@ MonoBehaviour:
   characterImage: {fileID: 1145780747}
   storyText: {fileID: 2025191158}
   characterName: {fileID: 1609622197}
+  textSpeed: 0.1
 --- !u!4 &348296605
 Transform:
   m_ObjectHideFlags: 0
