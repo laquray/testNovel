@@ -106,3 +106,7 @@ InitTestScene*.unity*
 /[Aa]ssets/[Ss]ceneDependencyCache*
 
 /[Aa]ssets/TextMesh Pro
+
+# Recovery
+/[Aa]ssets/_Recovery
+/[Aa]ssets/_Recovery.meta
