@@ -12,40 +12,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05223274c518b9418506a74e260e3bb, type: 3}
   m_Name: StartStory
   m_EditorClassIdentifier: Assembly-CSharp::StoryData
-  stories:
-  - rid: 5401627427878731842
-  - rid: 5401627427878731843
-  - rid: 5401627427878731844
-  - rid: 5401627427878731845
+  events:
+  - rid: 5401627431183843394
+  - rid: 5401627431183843395
+  - rid: 5401627431183843396
+  - rid: 5401627431183843398
+  - rid: 5401627431183843399
   references:
     version: 2
     RefIds:
-    - rid: 5401627427878731842
+    - rid: 5401627431183843394
       type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
       data:
         Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
         CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
-        StoryText: "\u3084\u3041\u3001\u8ABF\u5B50\u306F\u3069\u3046\u304B\u306A\uFF1F"
+        StoryText: "\u3053\u3093\u306B\u3061\u306F\u3001\u50D5\u306F\u7DD1\u7389\uFF01\n\u3088\u308D\u3057\u304F\u306D\uFF01"
         CharacterName: "\u7DD1\u7389"
-    - rid: 5401627427878731843
+    - rid: 5401627431183843395
       type: {class: ChoiceEvent, ns: , asm: Assembly-CSharp}
       data:
         Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
         CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
-        choices:
-        - "\u3044\u3044\u306D\uFF01"
-        - "\u60AA\u3044\u304B\u3082\uFF5E"
-        JumpTargetIndex: 0
-    - rid: 5401627427878731844
-      type: {class: JumpEvent, ns: , asm: Assembly-CSharp}
-      data:
-        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
-        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
-        jumpTargetStoryData: {fileID: 11400000, guid: d7a6d276f83ee8d4bb82073e80671455, type: 2}
-    - rid: 5401627427878731845
+        Choices:
+        - "\u3088\u308D\u3057\u304F"
+        - "\u2026\u2026"
+        JumpTargetEventNum: 0200000004000000
+    - rid: 5401627431183843396
       type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
       data:
         Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
         CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
-        StoryText: "\u305D\u3063\u304B\u3001\u71B1\u3044\u304B\u3089\u6C17\u3092\u4ED8\u3051\u3066\u306D\uFF5E"
+        StoryText: "\u3042\u308A\u304C\u3068\u3046\uFF01"
+        CharacterName: "\u7DD1\u7389"
+    - rid: 5401627431183843398
+      type: {class: JumpEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        JumpTargetStoryData: {fileID: 11400000, guid: d7a6d276f83ee8d4bb82073e80671455, type: 2}
+    - rid: 5401627431183843399
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u30CE\u30EA\u60AA\u3044\u306A\uFF5E\uFF01"
         CharacterName: "\u7DD1\u7389"

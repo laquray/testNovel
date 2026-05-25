@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05223274c518b9418506a74e260e3bb, type: 3}
   m_Name: SecondStory
   m_EditorClassIdentifier: Assembly-CSharp::StoryData
-  stories: []
+  events:
+  - rid: 5401627431183843400
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 5401627431183843400
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 0}
+        StoryText: "\u4E8C\u756A\u76EE\u306E\u4F1A\u8A71\uFF01"
+        CharacterName: 

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,82 +6,105 @@ using UnityEngine.UI;
 
 public class StoryManager : MonoBehaviour
 {
-    [SerializeField] private StoryData[] storyDatas;
+    [SerializeField] private StoryData storyData;
     [SerializeField] private Image background;
     [SerializeField] private Image characterImage;
+    [SerializeField] private GameObject selifWindow;
     [SerializeField] private TextMeshProUGUI storyText;
     [SerializeField] private TextMeshProUGUI characterName;
+    [SerializeField] private GameObject choiceWindow;
+    [SerializeField] private GameObject choiceButtonPrefab;
 
     public float textSpeed = 0.05f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public int storyIndex { get; private set; }
-    public int textIndex { get; private set; }
+    public int eventIndex { get; private set; }
 
+    private StoryEvent storyEvent;
     private bool finishText = false;
     private void Start()
     {
         storyText.text = "";
-        setStoryElement(storyIndex, textIndex);
+        eventIndex = 0;
+        setStoryElement();
     }
 
     private void Update()
     {
         if (Keyboard.current.enterKey.wasPressedThisFrame)
         {
-            if (!finishText)
+            if (storyEvent is SelifEvent)
             {
-                finishText = true;
+                if (!finishText)
+                {
+                    finishText = true;
+                }
+                else
+                {
+                    eventIndex++;
+                    storyText.text = "";
+                    characterName.text = "";
+                    setStoryElement();
+                }
             }
-            else
+            else if (storyEvent is ChoiceEvent)
             {
-                textIndex++;
-                storyText.text = "";
-                characterName.text = "";
-                setStoryElement(storyIndex, textIndex);
+                Debug.Log("とりあえず進行するよ");
+                eventIndex++;
+                setStoryElement();
             }
+            else if (storyEvent is JumpEvent)
+            {
+                Debug.Log("何も起こさない処理だよ");
+            }
+           
         }
     }
 
-    private void setStoryElement(int _storyIndex, int _textIndex)
+    private void setStoryElement()
     {
-        var storyElement = storyDatas[_storyIndex].stories[_textIndex];
+        storyEvent = storyData.events[eventIndex];
         // 背景画像が設定されている時は描画、そうでないときは黒一色
-        if (storyElement.Background != null)
+        if (storyEvent.Background != null)
         {
-            background.sprite = storyElement.Background;
+            background.sprite = storyEvent.Background;
         }
         else
         {
             background.color = new Color32(0, 0, 0, 255);
         }
         // キャラクター画像が設定されている時は描画、そうでないときは透過
-        if (storyElement.CharacterImage != null)
+        if (storyEvent.CharacterImage != null)
         {
-            characterImage.sprite = storyElement.CharacterImage;
+            characterImage.sprite = storyEvent.CharacterImage;
         }
         else
         {
             characterImage.color = new Color32(255, 255, 255, 0);
         }
-        if (storyElement is SelifEvent)
+        if (storyEvent is SelifEvent)
         {
-            SelifEvent selifEvent = storyElement as SelifEvent;
-           
+            SelifEvent selifEvent = storyEvent as SelifEvent;
+            selifWindow.gameObject.SetActive(true);
+            choiceWindow.gameObject.SetActive(false);
+            
             characterName.text = selifEvent.CharacterName;
             string storyTextString = selifEvent.StoryText;
             //1文字づつ表示するコルーチン
             StartCoroutine(TypeSentence(storyTextString));
         }
-        else if (storyElement is ChoiceEvent)
+        else if (storyEvent is ChoiceEvent)
         {
-            ChoiceEvent choiceEvent = storyElement as ChoiceEvent;
-            Debug.Log("選択肢表示" + choiceEvent.choices);
-
+            choiceWindow.gameObject.SetActive(true);
+            selifWindow.gameObject.SetActive(false);
+            ChoiceEvent choiceEvent = storyEvent as ChoiceEvent;
+            CreateChoices(choiceEvent);
         }
-        else if (storyElement is JumpEvent)
+        else if (storyEvent is JumpEvent)
         {
-            JumpEvent jumpEvent = storyElement as JumpEvent;
-            Debug.Log("ジャンプ先" + jumpEvent.jumpTargetStoryData.name);
+            JumpEvent jumpEvent = storyEvent as JumpEvent;
+            storyData = jumpEvent.JumpTargetStoryData;
+            eventIndex = 0;
+            setStoryElement();
         }
     }
 
@@ -100,5 +122,19 @@ public class StoryManager : MonoBehaviour
             yield return new WaitForSeconds(textSpeed);
         }
         finishText = true;
+    }
+
+    private void CreateChoices(ChoiceEvent _choiceEvent)
+    {
+        foreach (var letter in _choiceEvent.Choices)
+        {
+            Debug.Log(letter.ToString());
+        }
+    }
+
+    public void Choice(int _targetIndex)
+    {
+        eventIndex = _targetIndex;
+        setStoryElement();
     }
 }

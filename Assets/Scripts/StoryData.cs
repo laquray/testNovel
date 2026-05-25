@@ -6,7 +6,7 @@ using UnityEngine;
 public class StoryData : ScriptableObject
 {
     [SerializeReference, SubclassSelector]
-    public List<StoryEvent> stories = new List<StoryEvent>();
+    public List<StoryEvent> events = new List<StoryEvent>();
 }
 
 [System.Serializable]
@@ -26,12 +26,12 @@ public class SelifEvent : StoryEvent
 [System.Serializable]
 public class ChoiceEvent : StoryEvent
 {
-    public List<string> choices;
-    public int JumpTargetIndex;
+    public List<string> Choices;
+    public List<int> JumpTargetEventNum;
 }
 
 [System.Serializable]
 public class JumpEvent : StoryEvent
 {
-    public StoryData jumpTargetStoryData;
+    public StoryData JumpTargetStoryData;
 }
