@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoryManager
   storyDatas:
-  - {fileID: 11400000, guid: ca74b9aa248bbe241a2bedbf45096d94, type: 2}
+  - {fileID: 11400000, guid: 77bdb8a6fc77afc40ad020e42a6990ec, type: 2}
   background: {fileID: 841883092}
   characterImage: {fileID: 1145780747}
   storyText: {fileID: 2025191158}

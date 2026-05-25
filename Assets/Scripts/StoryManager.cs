@@ -64,10 +64,26 @@ public class StoryManager : MonoBehaviour
         {
             characterImage.color = new Color32(255, 255, 255, 0);
         }
-        characterName.text = storyElement.CharacterName;
-        string storyTextString = storyElement.StoryText;
-        //1文字づつ表示するコルーチン
-        StartCoroutine(TypeSentence(storyTextString));
+        if (storyElement is SelifEvent)
+        {
+            SelifEvent selifEvent = storyElement as SelifEvent;
+           
+            characterName.text = selifEvent.CharacterName;
+            string storyTextString = selifEvent.StoryText;
+            //1文字づつ表示するコルーチン
+            StartCoroutine(TypeSentence(storyTextString));
+        }
+        else if (storyElement is ChoiceEvent)
+        {
+            ChoiceEvent choiceEvent = storyElement as ChoiceEvent;
+            Debug.Log("選択肢表示" + choiceEvent.choices);
+
+        }
+        else if (storyElement is JumpEvent)
+        {
+            JumpEvent jumpEvent = storyElement as JumpEvent;
+            Debug.Log("ジャンプ先" + jumpEvent.jumpTargetStoryData.name);
+        }
     }
 
     private IEnumerator TypeSentence(string _storyTextString)

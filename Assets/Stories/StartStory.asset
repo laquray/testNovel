@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b05223274c518b9418506a74e260e3bb, type: 3}
+  m_Name: StartStory
+  m_EditorClassIdentifier: Assembly-CSharp::StoryData
+  stories:
+  - rid: 5401627427878731842
+  - rid: 5401627427878731843
+  - rid: 5401627427878731844
+  - rid: 5401627427878731845
+  references:
+    version: 2
+    RefIds:
+    - rid: 5401627427878731842
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u3084\u3041\u3001\u8ABF\u5B50\u306F\u3069\u3046\u304B\u306A\uFF1F"
+        CharacterName: "\u7DD1\u7389"
+    - rid: 5401627427878731843
+      type: {class: ChoiceEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        choices:
+        - "\u3044\u3044\u306D\uFF01"
+        - "\u60AA\u3044\u304B\u3082\uFF5E"
+        JumpTargetIndex: 0
+    - rid: 5401627427878731844
+      type: {class: JumpEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        jumpTargetStoryData: {fileID: 11400000, guid: d7a6d276f83ee8d4bb82073e80671455, type: 2}
+    - rid: 5401627427878731845
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u305D\u3063\u304B\u3001\u71B1\u3044\u304B\u3089\u6C17\u3092\u4ED8\u3051\u3066\u306D\uFF5E"
+        CharacterName: "\u7DD1\u7389"
