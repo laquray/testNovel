@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Data", menuName = "testStoryData")]
 public class TestStoryData : ScriptableObject
 {
-    [SerializeReference]
+    [SerializeReference, SubclassSelector]
     public List<StoryEvent> stories = new List<StoryEvent>();
 }
 
@@ -33,6 +33,7 @@ public class ChoiceEvent : StoryEvent
     public int JumpTargetIndex;
 }
 
+[System.Serializable]
 public class JumpEvent : StoryEvent
 {
     public TestStoryData jumpTargetStoryData;
