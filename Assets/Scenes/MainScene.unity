@@ -194,6 +194,8 @@ MonoBehaviour:
   choiceWindow: {fileID: 8453570969996982756}
   choiceButtonPrefab: {fileID: 7275612751610330261, guid: 53052516a5e3b4e4d9fedf07969b18b7, type: 3}
   textSpeed: 0.1
+  fadeSpeed: 0.01
+  fadeStep: 51
 --- !u!4 &348296605
 Transform:
   m_ObjectHideFlags: 0
@@ -1089,6 +1091,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5739456147209661171}
+  - component: {fileID: 8453570969996982757}
   m_Layer: 5
   m_Name: ChoiceWindow
   m_TagString: Untagged
@@ -1096,6 +1099,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8453570969996982757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8453570969996982756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 50
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

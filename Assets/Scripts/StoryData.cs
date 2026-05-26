@@ -6,17 +6,17 @@ using UnityEngine;
 public class StoryData : ScriptableObject
 {
     [SerializeReference, SubclassSelector]
-    public List<StoryEvent> events = new List<StoryEvent>();
+    public List<StoryCommand> events = new List<StoryCommand>();
 }
 
 [System.Serializable]
-public abstract class StoryEvent {
+public abstract class StoryCommand {
     public Sprite Background;
     public Sprite CharacterImage;
 }
 
 [System.Serializable]
-public class SelifEvent : StoryEvent
+public class SelifEvent : StoryCommand
 {
     [TextArea]
     public string StoryText;
@@ -24,14 +24,26 @@ public class SelifEvent : StoryEvent
 }
 
 [System.Serializable]
-public class ChoiceEvent : StoryEvent
+public class ChoiceEvent : StoryCommand
 {
-    public List<string> Choices;
-    public List<int> JumpTargetEventNum;
+    public List<ChoiceData> ChoiceDataList;
 }
 
 [System.Serializable]
-public class JumpEvent : StoryEvent
+public class ChoiceData
+{
+    public string Text;
+    public int JumpTargetEventNum;
+}
+
+[System.Serializable]
+public class JumpStoryDataCommand : StoryCommand
 {
     public StoryData JumpTargetStoryData;
+}
+
+[System.Serializable]
+public class JumpEventCommand : StoryCommand
+{
+    public int JumpTargetEventNum;
 }

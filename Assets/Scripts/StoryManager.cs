@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,27 +10,33 @@ public class StoryManager : MonoBehaviour
     [SerializeField] private StoryData storyData;
     [SerializeField] private Image background;
     [SerializeField] private Image characterImage;
+    [Header("SelifWindow")]
     [SerializeField] private GameObject selifWindow;
     [SerializeField] private TextMeshProUGUI storyText;
     [SerializeField] private TextMeshProUGUI characterName;
+    [Header("ChoiceWindow")]
     [SerializeField] private GameObject choiceWindow;
     [SerializeField] private GameObject choiceButtonPrefab;
 
+    [Header("Config")]
     public float textSpeed = 0.05f;
+    [SerializeField] private float fadeSpeed = 0.01f;
+    [SerializeField] private int fadeStep = 100;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public int eventIndex { get; private set; }
 
-    private StoryEvent storyEvent;
+    private StoryCommand storyEvent;
     private bool finishText = false;
     private void Start()
     {
         storyText.text = "";
         eventIndex = 0;
-        setStoryElement();
+        StartCoroutine(setStoryElement());
     }
 
     private void Update()
     {
+        // エンターキー押した時のそれぞれの処理
         if (Keyboard.current.enterKey.wasPressedThisFrame)
         {
             if (storyEvent is SelifEvent)
@@ -43,16 +50,18 @@ public class StoryManager : MonoBehaviour
                     eventIndex++;
                     storyText.text = "";
                     characterName.text = "";
-                    setStoryElement();
+                    StartCoroutine(setStoryElement());
                 }
             }
+
+            // 仮で用意
             else if (storyEvent is ChoiceEvent)
             {
                 Debug.Log("とりあえず進行するよ");
                 eventIndex++;
-                setStoryElement();
+                StartCoroutine(setStoryElement());
             }
-            else if (storyEvent is JumpEvent)
+            else if (storyEvent is JumpStoryDataCommand)
             {
                 Debug.Log("何も起こさない処理だよ");
             }
@@ -60,26 +69,28 @@ public class StoryManager : MonoBehaviour
         }
     }
 
-    private void setStoryElement()
+    private IEnumerator setStoryElement()
     {
         storyEvent = storyData.events[eventIndex];
         // 背景画像が設定されている時は描画、そうでないときは黒一色
         if (storyEvent.Background != null)
         {
             background.sprite = storyEvent.Background;
+            yield return FadeImage(background, new Color32(255, 255, 255, 255));
         }
         else
         {
-            background.color = new Color32(0, 0, 0, 255);
+            yield return FadeImage(background, new Color32(0, 0, 0, 255));
         }
         // キャラクター画像が設定されている時は描画、そうでないときは透過
         if (storyEvent.CharacterImage != null)
         {
             characterImage.sprite = storyEvent.CharacterImage;
+            yield return FadeImage(characterImage, new Color32(255, 255, 255, 255));
         }
         else
         {
-            characterImage.color = new Color32(255, 255, 255, 0);
+            yield return FadeImage(characterImage, new Color32(255, 255, 255, 0));
         }
         if (storyEvent is SelifEvent)
         {
@@ -99,12 +110,18 @@ public class StoryManager : MonoBehaviour
             ChoiceEvent choiceEvent = storyEvent as ChoiceEvent;
             CreateChoices(choiceEvent);
         }
-        else if (storyEvent is JumpEvent)
+        else if (storyEvent is JumpStoryDataCommand)
         {
-            JumpEvent jumpEvent = storyEvent as JumpEvent;
+            JumpStoryDataCommand jumpEvent = storyEvent as JumpStoryDataCommand;
             storyData = jumpEvent.JumpTargetStoryData;
             eventIndex = 0;
-            setStoryElement();
+            StartCoroutine(setStoryElement());
+        }
+        else if (storyEvent is JumpEventCommand)
+        {
+            JumpEventCommand jumpEvent = storyEvent as JumpEventCommand;
+            eventIndex = jumpEvent.JumpTargetEventNum;
+            StartCoroutine(setStoryElement());
         }
     }
 
@@ -124,17 +141,58 @@ public class StoryManager : MonoBehaviour
         finishText = true;
     }
 
+    private IEnumerator FadeImage(Image _fadeImage, Color32 _targetColor)
+    {
+        float diffR = _targetColor.r - _fadeImage.color.r * 255.0f;
+        float diffG = _targetColor.g - _fadeImage.color.g * 255.0f;
+        float diffB = _targetColor.b - _fadeImage.color.b * 255.0f;
+        float diffA = _targetColor.a - _fadeImage.color.a * 255.0f;
+        float deltaR = diffR / fadeStep;
+        float deltaG = diffG / fadeStep;
+        float deltaB = diffB / fadeStep;
+        float deltaA = diffA / fadeStep;
+
+        if (diffR != 0 || diffG != 0 || diffB != 0 || diffA != 0)
+        {
+            for (int i = 0; i < fadeStep; i++)
+            {
+                _fadeImage.color = new Color32(
+                    (byte)AddColor(_fadeImage.color.r * 255.0f, deltaR),
+                    (byte)AddColor(_fadeImage.color.g * 255.0f, deltaG),
+                    (byte)AddColor(_fadeImage.color.b * 255.0f, deltaB),
+                    (byte)AddColor(_fadeImage.color.a * 255.0f, deltaA));
+                yield return new WaitForSeconds(fadeSpeed);
+            }
+            _fadeImage.color = _targetColor;
+        }
+        yield return null;
+    }
+
+    private float AddColor(float _target, float _delta)
+    {
+        float result = _target + _delta;
+        if (result < 0.0f) return 0.0f;
+        else if (result > 255.0f) return 255.0f;
+        return result;
+    }
+
     private void CreateChoices(ChoiceEvent _choiceEvent)
     {
-        foreach (var letter in _choiceEvent.Choices)
+        foreach (ChoiceData choiceData in _choiceEvent.ChoiceDataList)
         {
-            Debug.Log(letter.ToString());
+            GameObject gameObject = Instantiate(choiceButtonPrefab, choiceWindow.transform);
+            Button button = gameObject.GetComponent<Button>();
+            TMP_Text text = gameObject.GetComponentInChildren<TMP_Text>();
+
+            text.text = choiceData.Text;
+            int jumpIndex = choiceData.JumpTargetEventNum;
+            button.onClick.AddListener(() => { Choice(jumpIndex); });
         }
     }
 
     public void Choice(int _targetIndex)
     {
         eventIndex = _targetIndex;
-        setStoryElement();
+        StartCoroutine(setStoryElement());
     }
 }
