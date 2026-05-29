@@ -14,70 +14,350 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StoryData
   events:
   - rid: 5401627431183843394
-  - rid: 5401627431183843395
-  - rid: 5401627431183843396
-  - rid: 5401627449939460160
-  - rid: 5401627449939460161
-  - rid: 5401627452858957888
-  - rid: 5401627431183843399
-  - rid: 5401627452858957889
+  - rid: 5401627507227361345
+  - rid: 5401627475587366976
+  - rid: 5401627475587366977
+  - rid: 5401627475587366978
+  - rid: 5401627475587366979
+  - rid: 5401627507227361280
+  - rid: 5401627507227361346
+  - rid: 5401627507227361347
+  - rid: 5401627507227361348
+  - rid: 5401627507227361349
+  - rid: 5401627507227361350
+  - rid: 5401627507227361351
+  - rid: 5401627507227361352
+  - rid: 5401627507227361353
+  - rid: 5401627507227361354
+  - rid: 5401627507227361355
+  - rid: 5401627507227361356
+  - rid: 5401627507227361357
+  - rid: 5401627507227361358
+  - rid: 5401627507227361359
+  - rid: 5401627507227361362
+  - rid: 5401627507227361363
+  - rid: 5401627507227361364
+  - rid: 5401627507227361365
+  - rid: 5401627507227361360
+  - rid: 5401627507227361361
+  - rid: 5401627507227361366
+  - rid: 5401627507227361371
+  - rid: 5401627507227361367
+  - rid: 5401627507227361368
+  - rid: 5401627507227361369
+  - rid: 5401627507227361370
+  - rid: 5401627507227361372
+  - rid: 5401627507227361373
   references:
     version: 2
     RefIds:
     - rid: 5401627431183843394
       type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
       data:
-        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
-        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
-        StoryText: "\u3053\u3093\u306B\u3061\u306F\u3001\u50D5\u306F\u7DD1\u7389\uFF01\n\u3088\u308D\u3057\u304F\u306D\uFF01"
-        CharacterName: "\u7DD1\u7389"
-    - rid: 5401627431183843395
-      type: {class: ChoiceEvent, ns: , asm: Assembly-CSharp}
-      data:
-        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
-        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
-        ChoiceDataList:
-        - Text: "\u3088\u308D\u3057\u304F\uFF01"
-          JumpTargetEventNum: 2
-        - Text: "\u2026\u2026"
-          JumpTargetEventNum: 6
-    - rid: 5401627431183843396
-      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
-      data:
-        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
-        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
-        StoryText: "\u3042\u308A\u304C\u3068\u3046\uFF01"
-        CharacterName: "\u7DD1\u7389"
-    - rid: 5401627431183843399
-      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
-      data:
-        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
-        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
-        StoryText: "\u30CE\u30EA\u60AA\u3044\u306A\uFF5E\uFF01"
-        CharacterName: "\u7DD1\u7389"
-    - rid: 5401627449939460160
-      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
-      data:
-        Background: {fileID: 0}
+        Background: {fileID: 6760498692917999876, guid: 725eea4222061c345a81531653ae2a98, type: 3}
         CharacterImage: {fileID: 0}
-        StoryText: "\u900F\u660E\u306B\u306A\u3063\u3066\u307F\u308B\uFF5E"
+        StoryText: "\u306F\u3041\u3001\u306F\u3041\u2026\u2026\n\u3042\u3001\u71B1\u3044\u2026\u2026"
         CharacterName: 
-    - rid: 5401627449939460161
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627475587366976
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 0}
+        StoryText: "\u897F\u65E5\u5DEE\u3057\u8FBC\u3080\u5915\u66AE\u308C\u6642\u3002\n\u65E5\u4E2D\u306B\u6E29\u3081\u3089\u308C\u305F\u71B1\u6C17\u304C\u3001\u307E\u3060\u5730\u306B\u9019\u3063\u3066\u3044\u308B\u3002"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627475587366977
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 0}
+        StoryText: "\u3082\u3046\u76F4\u306B\u967D\u304C\u66AE\u308C\u308B\u3068\u3044\u3046\u306E\u306B\u3001\u3069\u3046\u3057\u3066\u3053\u3093\u306A\u306B\u6691\u3044\u3093\u3060\u3002\n\u5915\u967D\u306E\u8D64\u3055\u306B\u30A8\u30E2\u30FC\u30B7\u30E7\u30CA\u30EB\u306A\u6C17\u5206\u306B\u306A\u308B\u3053\u3068\u3082\u3067\u304D\u305A\u3001\n\u305F\u3060\u5F37\u3044\u65E5\u5149\u306B\u808C\u304C\u713C\u304B\u308C\u3066\u3044\u305F\u3002"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627475587366978
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 0}
+        StoryText: "\u3055\u3059\u304C\u516B\u6708\u3068\u8A00\u3063\u305F\u3068\u3053\u308D\u304B\u3002\n\u5E74\u3005\u6691\u304F\u611F\u3058\u308B\u306E\u306F\u932F\u899A\u304B\u3069\u3046\u304B\u5206\u304B\u3089\u306A\u3044\u304C\u3001\n\u3068\u306B\u3082\u304B\u304F\u306B\u3082\u3001\u3053\u306E\u6691\u3055\u306B\u8EAB\u304C\u8339\u3067\u4E0A\u304C\u308A\u305D\u3046\u306B\u306A\u3063\u3066\u3044\u305F\u3002"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627475587366979
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 0}
+        StoryText: "\u8033\u3092\u3059\u307E\u305B\u3070\u3001\u7B1B\u3068\u592A\u9F13\u306E\u97F3\u304C\u3001\u9060\u304F\u304B\u3089\u805E\u3053\u3048\u308B\u3002\n\u4ECA\u65E5\u306E\u591C\u306B\u306F\u796D\u308A\u304C\u3042\u308B\u304B\u3089\u3001\u305D\u308C\u306E\u6E96\u5099\u3092\u3057\u3066\u3044\u308B\u3088\u3046\u3060\u3002"
+        CharacterName: 
+        SE: {fileID: 8300000, guid: f4bd89f7f30bed74f84668e29bd1a96c, type: 3}
+        SEAmount: 0.1
+    - rid: 5401627507227361280
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 0}
+        StoryText: "\u9F8D\u795E\u3067\u3042\u308B\u300C\u7DD1\u7389\u69D8\u300D\u3092\u7940\u308B\u304A\u796D\u308A\u3002\n\u7523\u307E\u308C\u305F\u3068\u304D\u304B\u3089\u7D9A\u304F\u3001\u6B74\u53F2\u306E\u9577\u3044\u796D\u308A\u3060\u3002"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361345
+      type: {class: PlayMusic, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 0}
+        BGM: {fileID: 8300000, guid: 902c4ed992d8dbe41943bd14621081b2, type: 3}
+        BGMAmount: 1
+    - rid: 5401627507227361346
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 0}
+        StoryText: "\u6570\u5E74\u9593\u5730\u5143\u3092\u96E2\u308C\u3066\u50CD\u3044\u3066\u3044\u305F\u6545\u306B\u3001\n\u3053\u306E\u796D\u308A\u306B\u6765\u308B\u306E\u306F\u4E45\u3057\u3076\u308A\u3060\u3002\n\u305D\u308C\u3082\u3001\u796D\u308A\u81EA\u4F53\u3092\u76EE\u7684\u3068\u305B\u305A\u306B\u3002"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361347
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 0}
+        StoryText: "\u4F1A\u3044\u306B\u6765\u3066\u304F\u308C\u3068\u3046\u308B\u3055\u304F\u8A00\u308F\u308C\u3066\u3057\u307E\u3063\u305F\u304B\u3089\u3001\n\u4ECA\u306E\u5BB6\u304B\u3089\u56DB\u6642\u9593\u306F\u304B\u304B\u308B\u6545\u90F7\u306B\u623B\u3063\u3066\u304D\u305F\u308F\u3051\u3060\u3002"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 0.1
+    - rid: 5401627507227361348
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 0}
+        StoryText: "\u4ED5\u4E8B\u3092\u4F11\u3093\u3067\u3044\u308B\u5834\u5408\u3067\u306F\u306A\u3044\u306E\u306B\u2026\u2026\n\u5E30\u3063\u305F\u3089\u5FB9\u591C\u3067\u3084\u3089\u306A\u3044\u3068\u3001\u307E\u305F\u4E0A\u53F8\u306B\u6012\u3089\u308C\u3066\u3057\u307E\u3044\u305D\u3046\u3060\u3002"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 0.1
+    - rid: 5401627507227361349
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 0}
+        StoryText: "\u3044\u3084\u3001\u4ECA\u306F\u65E9\u304F\u30A2\u30A4\u30C4\u306E\u3082\u3068\u306B\u884C\u304B\u306A\u3044\u3068\u3002\n\u305D\u308D\u305D\u308D\u9045\u3044\u3068\u6012\u3089\u308C\u3066\u3057\u307E\u3044\u305D\u3046\u3060\u304B\u3089\u3002"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 0.1
+    - rid: 5401627507227361350
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 0}
+        StoryText: "\u300C\u3084\u3063\u3068\u6765\u305F\u30FC\u3063\uFF01\n\u3000\u3082\u3046\u3001\u3044\u3064\u307E\u3067\u5F85\u3063\u305F\u3068\u601D\u3063\u3066\u308B\u306E\uFF01\uFF01\u300D"
+        CharacterName: "\uFF1F\uFF1F\uFF1F"
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361351
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 0}
+        StoryText: "\u9060\u304F\u304B\u3089\u3001\u5927\u58F0\u304C\u805E\u3053\u3048\u308B\u3002\n\u3084\u3063\u3071\u308A\u3001\u75FA\u308C\u3092\u5207\u3089\u3057\u3066\u3044\u305F\u3088\u3046\u3060\u3002"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361352
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 0}
+        StoryText: "\u5927\u304D\u304F\u7FBD\u3070\u305F\u304F\u97F3\u3002\n\u305D\u308C\u304C\u5F90\u3005\u306B\u8FD1\u3065\u3044\u3066\u304D\u3066\u3001\u305D\u306E\u97F3\u306E\u767A\u751F\u6E90\u306F\u96A3\u306B\u7740\u9678\u3057\u305F\u3002"
+        CharacterName: 
+        SE: {fileID: 8300000, guid: 992a1b7f06dd4ef47a87dfa10f08a784, type: 3}
+        SEAmount: 1
+    - rid: 5401627507227361353
       type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
       data:
         Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
         CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
-        StoryText: "\u3053\u308C\u3067\u518D\u767B\u5834\u3067\u304D\u308B\uFF1F"
+        StoryText: "\u300C\u304A\u663C\u306B\u306F\u6765\u308B\u3063\u3066\u8A00\u3063\u3066\u305F\u3058\u3083\u3093\uFF01\n\u3000\u306A\u306E\u306B\u307B\u3089\u3001\u7A7A\u898B\u3066\u3088\uFF01\n\u3000\u3082\u3046\u5915\u65B9\u3060\u3088\uFF01\uFF1F\u300D"
+        CharacterName: "\uFF1F\uFF1F\uFF1F"
+        SE: {fileID: 8300000, guid: 10f14555fcc29244ab946a627a1015f0, type: 3}
+        SEAmount: 1
+    - rid: 5401627507227361354
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u300C\u308F\u3001\u60AA\u304B\u3063\u305F\u3063\u3066\u7DD1\u7389\u3002\n\u3000\u3061\u3087\u3063\u3068\u4ED5\u4E8B\u3067\u75B2\u308C\u3066\u3066\u3001\u8D77\u304D\u305F\u306E\u663C\u524D\u306A\u3093\u3060\u3088\u2026\u2026\n\u3000\u304A\u8A6B\u3073\u306B\u304A\u571F\u7523\u6301\u3063\u3066\u304D\u305F\u304B\u3089\u3001\u8A31\u3057\u3066\u304F\u308C\u300D"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361355
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u300C\u3080\uFF5E\u2026\u2026\u305D\u308C\u3058\u3083\u4ED5\u65B9\u306A\u3044\u306A\u2026\u2026\u300D"
         CharacterName: "\u7DD1\u7389"
-    - rid: 5401627452858957888
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361356
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u6E0B\u3005\u3068\u8A00\u3063\u305F\u69D8\u5B50\u306A\u304C\u3089\u3001\u7D0D\u5F97\u3057\u3066\u304F\u308C\u305F\u3088\u3046\u3060\u3002\n"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361357
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u5F7C\u306E\u540D\u524D\u306F\u3001\u7DD1\u7389\u3002\n\u305D\u306E\u898B\u305F\u76EE\u306E\u901A\u308A\u306E\u9F8D\u3060\u3002\n\u305D\u306E\u5927\u304D\u3055\u306E\u5272\u306B\u306F\u81EA\u5206\u3068\u540C\u3044\u5E74\u3089\u3057\u3044\u3002"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361358
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u6751\u306E\u7686\u306F\u7DD1\u7389\u69D8\u3068\u8A00\u3063\u3066\u5F7C\u3092\u795E\u306E\u3088\u3046\u306B\u7940\u3063\u3066\u3044\u308B\u304C\u2026\u2026\n\u81EA\u5206\u306B\u3068\u3063\u3066\u306F\u305F\u3060\u306E\u53CB\u9054\u306B\u3057\u304B\u601D\u3048\u306A\u3044\u3002"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361359
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u300C\u306D\u3047\u306D\u3047\u3001\u3069\u3093\u306A\u304A\u571F\u7523\u8CB7\u3063\u3066\u304D\u305F\u306E\uFF1F\n\u3000\u898B\u305B\u3066\u898B\u305B\u3066\uFF5E\u300D"
+        CharacterName: "\u7DD1\u7389"
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361360
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u3060\u3063\u3066\u3053\u3093\u306A\u306B\u8DDD\u96E2\u611F\u8FD1\u3044\u3057\u3002\n\u9F8D\u3068\u3044\u3046\u3088\u308A\u306F\u7ADC\u3063\u3066\u611F\u3058\u3060\u3057\u3002\n\u795E\u69D8\u3089\u3057\u3044\u7ACB\u3061\u632F\u308B\u821E\u3044\u3082\u7279\u306B\u898B\u305B\u3066\u3053\u306A\u3044\u3002"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361361
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u60AA\u3044\u5974\u3067\u306F\u306A\u3044\u306E\u306F\u5206\u304B\u308B\u304C\u3001\n\u5A01\u53B3\u3068\u8A00\u3063\u305F\u985E\u306E\u3082\u306E\u306F\u5168\u304F\u611F\u3058\u306A\u3044\u3002\n\u6751\u306E\u7686\u304B\u3089\u3053\u3046\u3082\u7940\u3089\u308C\u3066\u3044\u308B\u306E\u304C\u4E0D\u601D\u8B70\u3060\u3063\u305F\u3002"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361362
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u300C\u5225\u306B\u3001\u305F\u3060\u306E\u30C1\u30E7\u30B3\u30AF\u30C3\u30AD\u30FC\u3060\u3088\u3002\n\u3000\u307B\u3089\u3001\u3053\u3093\u306A\u611F\u3058\u300D"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361363
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u300C\u3048\u30FC\u3063\u3001\u304A\u3044\u3057\u305D\u3046\uFF5E\u3063\uFF01\n\u3000\u4E00\u500B\u98DF\u3079\u3066\u3044\u3044\uFF1F\u3000\u3044\u3044\u3088\u306D\uFF1F\u300D"
+        CharacterName: "\u7DD1\u7389"
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361364
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u300C\u3042\u3041\u300D"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361365
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u300C\u3084\u3063\u305F\uFF5E\uFF01\u3000\u3042\u308A\u304C\u3068\uFF5E\uFF01\u300D"
+        CharacterName: "\u7DD1\u7389"
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361366
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u300C\u2026\u2026\u305D\u3046\u3044\u3048\u3070\u3001\u306A\u3093\u3067\u81EA\u5206\u306E\u3053\u3068\u547C\u3093\u3060\u3093\u3060\uFF1F\n\u3000\u3057\u304B\u3082\u796D\u308A\u306E\u65E5\u306A\u3093\u3066\u3001\u304A\u524D\u3082\u5927\u5909\u306A\u3093\u3058\u3083\u306A\u3044\u304B\uFF1F\u300D"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361367
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u300C\u2026\u2026\u610F\u5916\u304B\u3082\u3057\u308C\u306A\u3044\u3051\u3069\u3055\u3002\n\u3000\u796D\u308A\u306E\u65E5\u3063\u3066\u5B9F\u306F\u6687\u306A\u3093\u3060\u3002\n\u3000\u3060\u304B\u3089\u3001\u4E45\u3057\u3076\u308A\u306B\u4F1A\u3044\u305F\u3044\u306A\uFF5E\u3001\u3063\u3066\u300D"
+        CharacterName: "\u7DD1\u7389"
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361368
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u2026\u2026\u30AC\u30AD\u304B\u3088\u3002\n\u305D\u3093\u306A\u7528\u4EF6\u3060\u3051\u3067\u547C\u3076\u306A\u3088\u3002"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361369
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u3067\u3082\u307E\u3041\u3001\u3082\u3046\u4F11\u3093\u3067\u3053\u3053\u306B\u6765\u3066\u3057\u307E\u3063\u305F\u4EE5\u4E0A\u3001\n\u4ED8\u304D\u5408\u3063\u3066\u3084\u308B\u3068\u3059\u308B\u304B\u3002"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361370
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u300C\u5206\u304B\u3063\u305F\u3002\n\u3000\u3058\u3083\u3042\u3001\u3044\u3064\u3082\u306E\u3068\u3053\u884C\u304F\u304B\uFF1F\u300D"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361371
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u3075\u3068\u6C17\u306B\u306A\u3063\u305F\u7591\u554F\u3092\u554F\u3044\u304B\u3051\u308B\u3068\u3001\n\u7DD1\u7389\u306F\u614C\u3066\u3066\u53E3\u306B\u542B\u3093\u3067\u3044\u305F\u30C1\u30E7\u30B3\u30AF\u30C3\u30AD\u30FC\u3092\u98F2\u307F\u4E0B\u3057\u305F\u3002"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361372
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u300C\u3046\u3093\u3001\u3044\u3053\u3046\u3044\u3053\u3046\uFF01\u300D"
+        CharacterName: "\u7DD1\u7389"
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5401627507227361373
       type: {class: JumpStoryDataCommand, ns: , asm: Assembly-CSharp}
       data:
-        Background: {fileID: 0}
+        Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
         CharacterImage: {fileID: 0}
-        JumpTargetStoryData: {fileID: 0}
-    - rid: 5401627452858957889
-      type: {class: JumpStoryDataCommand, ns: , asm: Assembly-CSharp}
-      data:
-        Background: {fileID: 0}
-        CharacterImage: {fileID: 0}
-        JumpTargetStoryData: {fileID: 0}
+        JumpTargetStoryData: {fileID: 11400000, guid: d7a6d276f83ee8d4bb82073e80671455, type: 2}

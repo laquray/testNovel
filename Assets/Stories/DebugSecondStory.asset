@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b05223274c518b9418506a74e260e3bb, type: 3}
+  m_Name: DebugSecondStory
+  m_EditorClassIdentifier: Assembly-CSharp::StoryData
+  events:
+  - rid: 5401627507227361374
+  references:
+    version: 2
+    RefIds:
+    - rid: 5401627507227361374
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: 1889115725136107946, guid: aa925b2adaaef76469f5a70d0696ec15, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u4E8C\u756A\u76EE\u306E\u4F1A\u8A71\uFF01"
+        CharacterName: "\u7DD1\u7389"
+        SE: {fileID: 0}
+        SEAmount: 1

@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24d02536508e8c34796d7b0bd2de2493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoryManager
-  storyData: {fileID: 11400000, guid: 6f88b384c3e9edc4689a08cf1faf77f8, type: 2}
+  storyData: {fileID: 11400000, guid: 77bdb8a6fc77afc40ad020e42a6990ec, type: 2}
   oldBackground: {fileID: 1549910686}
   newBackground: {fileID: 1896450797}
   oldCharacterImage: {fileID: 1940714248}
@@ -509,7 +509,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -921,7 +921,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.115
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0

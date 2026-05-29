@@ -88,7 +88,7 @@ MonoBehaviour:
       data:
         Background: {fileID: -6577454450327069383, guid: e11e2625bcfe0d7469da3125866dae87, type: 3}
         CharacterImage: {fileID: 0}
-        JumpTargetStoryData: {fileID: 11400000, guid: d7a6d276f83ee8d4bb82073e80671455, type: 2}
+        JumpTargetStoryData: {fileID: 11400000, guid: 71e07cfedc0dc37488d697aa702fda48, type: 2}
     - rid: 5401627471586000960
       type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
       data:
