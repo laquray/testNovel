@@ -8,20 +8,32 @@ using UnityEngine.UI;
 public class StoryManager : MonoBehaviour
 {
     [SerializeField] private StoryData storyData;
-    [SerializeField] private Image background;
-    [SerializeField] private Image characterImage;
+
+    // 画像クロスフェード用変数
+    [SerializeField] private GameObject oldBackground;
+    [SerializeField] private GameObject newBackground;
+    [SerializeField] private GameObject oldCharacterImage;
+    [SerializeField] private GameObject newCharacterImage;
     [Header("SelifWindow")]
     [SerializeField] private GameObject selifWindow;
     [SerializeField] private TextMeshProUGUI storyText;
+    [SerializeField] private GameObject nameWindow;
     [SerializeField] private TextMeshProUGUI characterName;
     [Header("ChoiceWindow")]
     [SerializeField] private GameObject choiceWindow;
     [SerializeField] private GameObject choiceButtonPrefab;
+    [Header("Music")]
+    [SerializeField] private AudioSource BGMSource;
+    [SerializeField] private AudioSource SESource;
 
     [Header("Config")]
+    [SerializeField, Range(0.1f, 2.0f)] public float SErate = 1.0f;
+    [SerializeField, Range(0.1f, 2.0f)] public float BGMrate = 1.0f;
     public float textSpeed = 0.05f;
-    [SerializeField] private float fadeSpeed = 0.01f;
-    [SerializeField] private int fadeStep = 100;
+    [SerializeField] private float duration = 0.5f;
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public int eventIndex { get; private set; }
 
@@ -57,9 +69,7 @@ public class StoryManager : MonoBehaviour
             // 仮で用意
             else if (storyEvent is ChoiceEvent)
             {
-                Debug.Log("とりあえず進行するよ");
-                eventIndex++;
-                StartCoroutine(setStoryElement());
+                Debug.Log("何も起こさない処理だよ");
             }
             else if (storyEvent is JumpStoryDataCommand)
             {
@@ -72,34 +82,39 @@ public class StoryManager : MonoBehaviour
     private IEnumerator setStoryElement()
     {
         storyEvent = storyData.events[eventIndex];
-        // 背景画像が設定されている時は描画、そうでないときは黒一色
-        if (storyEvent.Background != null)
+
+        // フェード処理、同じ画像の時は処理しない(背景はnullをスルー)
+        if (storyEvent.Background != null && oldBackground.GetComponent<Image>().sprite != storyEvent.Background)
         {
-            background.sprite = storyEvent.Background;
-            yield return FadeImage(background, new Color32(255, 255, 255, 255));
+            yield return CrossFade(oldBackground, newBackground, storyEvent.Background);
         }
-        else
+
+        if (oldCharacterImage.GetComponent<Image>().sprite != storyEvent.CharacterImage)
         {
-            yield return FadeImage(background, new Color32(0, 0, 0, 255));
+            yield return CrossFade(oldCharacterImage, newCharacterImage, storyEvent.CharacterImage);
         }
-        // キャラクター画像が設定されている時は描画、そうでないときは透過
-        if (storyEvent.CharacterImage != null)
-        {
-            characterImage.sprite = storyEvent.CharacterImage;
-            yield return FadeImage(characterImage, new Color32(255, 255, 255, 255));
-        }
-        else
-        {
-            yield return FadeImage(characterImage, new Color32(255, 255, 255, 0));
-        }
+
         if (storyEvent is SelifEvent)
         {
             SelifEvent selifEvent = storyEvent as SelifEvent;
             selifWindow.gameObject.SetActive(true);
             choiceWindow.gameObject.SetActive(false);
-            
-            characterName.text = selifEvent.CharacterName;
+
+            if (selifEvent.CharacterName == "") nameWindow.SetActive(false);
+            else
+            {
+                nameWindow.SetActive(true);
+                characterName.text = selifEvent.CharacterName;
+            }
+
+            if (selifEvent.SE != null)
+            {
+                SESource.volume = selifEvent.SEAmount * SErate;
+                SESource.PlayOneShot(selifEvent.SE);
+            }
+                
             string storyTextString = selifEvent.StoryText;
+
             //1文字づつ表示するコルーチン
             StartCoroutine(TypeSentence(storyTextString));
         }
@@ -123,6 +138,15 @@ public class StoryManager : MonoBehaviour
             eventIndex = jumpEvent.JumpTargetEventNum;
             StartCoroutine(setStoryElement());
         }
+        else if (storyEvent is PlayMusic)
+        {
+            PlayMusic playMusic = storyEvent as PlayMusic;
+            BGMSource.clip = playMusic.BGM;
+            BGMSource.volume = playMusic.BGMAmount * BGMrate;
+            BGMSource.Play();
+            eventIndex++;
+            StartCoroutine(setStoryElement());
+        }
     }
 
     private IEnumerator TypeSentence(string _storyTextString)
@@ -141,39 +165,45 @@ public class StoryManager : MonoBehaviour
         finishText = true;
     }
 
-    private IEnumerator FadeImage(Image _fadeImage, Color32 _targetColor)
+    private IEnumerator CrossFade(GameObject _oldGo, GameObject _newGo, Sprite _targetSprite)
     {
-        float diffR = _targetColor.r - _fadeImage.color.r * 255.0f;
-        float diffG = _targetColor.g - _fadeImage.color.g * 255.0f;
-        float diffB = _targetColor.b - _fadeImage.color.b * 255.0f;
-        float diffA = _targetColor.a - _fadeImage.color.a * 255.0f;
-        float deltaR = diffR / fadeStep;
-        float deltaG = diffG / fadeStep;
-        float deltaB = diffB / fadeStep;
-        float deltaA = diffA / fadeStep;
+        float time = 0;
+        _newGo.GetComponent<Image>().sprite = _targetSprite;
+        CanvasGroup _oldCg = _oldGo.GetComponent<CanvasGroup>();
+        CanvasGroup _newCg = _newGo.GetComponent<CanvasGroup>();
 
-        if (diffR != 0 || diffG != 0 || diffB != 0 || diffA != 0)
+        while (time < duration)
         {
-            for (int i = 0; i < fadeStep; i++)
-            {
-                _fadeImage.color = new Color32(
-                    (byte)AddColor(_fadeImage.color.r * 255.0f, deltaR),
-                    (byte)AddColor(_fadeImage.color.g * 255.0f, deltaG),
-                    (byte)AddColor(_fadeImage.color.b * 255.0f, deltaB),
-                    (byte)AddColor(_fadeImage.color.a * 255.0f, deltaA));
-                yield return new WaitForSeconds(fadeSpeed);
-            }
-            _fadeImage.color = _targetColor;
-        }
-        yield return null;
-    }
+            time += Time.deltaTime;
 
-    private float AddColor(float _target, float _delta)
-    {
-        float result = _target + _delta;
-        if (result < 0.0f) return 0.0f;
-        else if (result > 255.0f) return 255.0f;
-        return result;
+            float t = time / duration;
+
+            if (_oldGo.GetComponent<Image>().sprite != null)
+            {
+                _oldCg.alpha = 1 - t;
+            }
+            if (_newGo.GetComponent<Image>().sprite != null)
+            {
+                _newCg.alpha = t;
+            }
+            yield return null;
+        }
+
+        _oldCg.alpha = 0;
+        if (_newGo.GetComponent<Image>().sprite != null)
+        {
+            _newCg.alpha = 1;
+        }
+        else
+        {
+            _newCg.alpha = 0;
+        }
+
+        (_newCg.alpha, _oldCg.alpha) = (_oldCg.alpha, _newCg.alpha);
+
+        Sprite tempS = _oldGo.GetComponent<Image>().sprite;
+        _oldGo.GetComponent<Image>().sprite = _newGo.GetComponent<Image>().sprite;
+        _newGo.GetComponent<Image>().sprite = tempS;
     }
 
     private void CreateChoices(ChoiceEvent _choiceEvent)

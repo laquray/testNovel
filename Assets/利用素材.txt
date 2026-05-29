@@ -1,13 +1,21 @@
 キャラクター素材
-
+ChatGPTにて作成
+https://chatgpt.com/ja-JP/
 
 背景素材
 みんちりえ様　田舎道2（夕方）
-トップページ：https://min-chi.material.jp/
-素材ページ：https://min-chi.material.jp/fm/bg_c/country_road2/
+https://min-chi.material.jp/fm/bg_c/country_road2/
 
+仲乃エマ様　背景素材「森」
+https://booth.pm/ja/items/3029675
+
+BGM素材
+のる様　下弦の月
+https://dova-s.jp/bgm/detail/23373
+
+MAKOOTO様　ぽかぽか田舎道
+https://dova-s.jp/bgm/detail/9718
 
 使用フォント
 Google Fonts　Shippori Mincho
-トップページ：https://fonts.google.com/
-素材ページ：https://fonts.google.com/selection?lang=ja_Jpan&preview.lang=ja_Jpan
+https://fonts.google.com/selection?lang=ja_Jpan&preview.lang=ja_Jpan

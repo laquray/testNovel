@@ -21,6 +21,8 @@ public class SelifEvent : StoryCommand
     [TextArea]
     public string StoryText;
     public string CharacterName;
+    public AudioClip SE;
+    public float SEAmount = 1.0f;
 }
 
 [System.Serializable]
@@ -46,4 +48,11 @@ public class JumpStoryDataCommand : StoryCommand
 public class JumpEventCommand : StoryCommand
 {
     public int JumpTargetEventNum;
+}
+
+[System.Serializable]
+public class PlayMusic : StoryCommand
+{
+    public AudioClip BGM;
+    public float BGMAmount = 1.0f;
 }
