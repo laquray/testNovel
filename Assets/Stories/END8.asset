@@ -12,7 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05223274c518b9418506a74e260e3bb, type: 3}
   m_Name: END8
   m_EditorClassIdentifier: Assembly-CSharp::StoryData
-  events: []
+  events:
+  - rid: 5749726813681352704
+  - rid: 5749726813681352705
+  - rid: 5749726813681352706
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 5749726813681352704
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: 1889115725136107946, guid: aa925b2adaaef76469f5a70d0696ec15, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u300C\u2026\u2026\u3042\u3041\u3002\u305D\u3046\u304B\u3001\u305D\u3046\u306A\u3093\u3060\u300D"
+        CharacterName: "\u7DD1\u7389"
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5749726813681352705
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: 1889115725136107946, guid: aa925b2adaaef76469f5a70d0696ec15, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u300C\u305D\u3093\u306A\u3053\u3068\u3092\u8A00\u3046\u306A\u3093\u3066\u3001\u541B\u306F\u2026\u2026\u5909\u308F\u3063\u3066\u3057\u307E\u3063\u305F\u3093\u3060\u300D"
+        CharacterName: "\u7DD1\u7389"
+        SE: {fileID: 0}
+        SEAmount: 1
+    - rid: 5749726813681352706
+      type: {class: SelifEvent, ns: , asm: Assembly-CSharp}
+      data:
+        Background: {fileID: 1889115725136107946, guid: aa925b2adaaef76469f5a70d0696ec15, type: 3}
+        CharacterImage: {fileID: 3361218868145291846, guid: 0b2af964e4061ba4987c2fa60726436c, type: 3}
+        StoryText: "\u305D\u3046\u8A00\u3063\u305F\u304B\u3068\u601D\u3046\u3068\u3001\u5F7C\u306F\u52E2\u3044\u3088\u304F\u4FFA\u306B\u98DB\u3073\u3064\u304D\u3001\n\u305D\u306E\u524D\u8DB3\u3067\u62BC\u3055\u3048\u3064\u3051\u308B\u3002"
+        CharacterName: 
+        SE: {fileID: 0}
+        SEAmount: 1

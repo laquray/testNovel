@@ -66,7 +66,7 @@ MonoBehaviour:
       data:
         Background: {fileID: 1889115725136107946, guid: aa925b2adaaef76469f5a70d0696ec15, type: 3}
         CharacterImage: {fileID: 0}
-        StoryText: "\u967D\u304C\u66AE\u308C\u3066\u3044\u305F\u306E\u3082\u3042\u3063\u3066\u3001\n\u3044\u3064\u306E\u9593\u306B\u304B\u967D\u304C\u66AE\u308C\u3066\u3044\u305F\u3002"
+        StoryText: "\u967D\u304C\u66AE\u308C\u3066\u3044\u305F\u306E\u3082\u3042\u3063\u3066\u3001\n\u3044\u3064\u306E\u9593\u306B\u304B\u8FBA\u308A\u306F\u771F\u3063\u6697\u306B\u306A\u3063\u3066\u3044\u305F\u3002"
         CharacterName: 
         SE: {fileID: 0}
         SEAmount: 1
@@ -247,7 +247,7 @@ MonoBehaviour:
         ChoiceDataList:
         - Text: "\u3053\u306E\u753A\u304C\u5ACC\u3044"
           JumpTargetEventNum: 22
-        - Text: "\u541B\u3068\u4F1A\u3044\u305F\u304F\u306A\u3044"
+        - Text: "\u304A\u524D\u304C\u5ACC\u3044"
           JumpTargetEventNum: 23
     - rid: 5401627507227361420
       type: {class: JumpStoryDataCommand, ns: , asm: Assembly-CSharp}

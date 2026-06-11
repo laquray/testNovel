@@ -224,5 +224,9 @@ public class StoryManager : MonoBehaviour
     {
         eventIndex = _targetIndex;
         StartCoroutine(setStoryElement());
+        foreach(Transform child in choiceWindow.transform)
+        {
+            Destroy(child.gameObject);
+        }
     }
 }
